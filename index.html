@@ -7,19 +7,40 @@
     <title>Forecast</title>
 </head>
 <body>
-    <header class="header">Weather Dashboard</header>
-    <section class="searchBox">
-        <i class = "fa-solid fa-location-dot"></i>
-        <input type="text" placeholder="Where am I?">
-        <button class= "fa-solid fa-magnifying-glass"></button>
-    </section>
+    <section class="container">
+        <section class="searchBox">
+            <i class = "fa-solid fa-location-dot"></i>
+            <input type="text" placeholder="Zip-Code:">
+            <button class= "fa-solid fa-magnifying-glass"></button>
+        </section>
 
-    <section class="oops">
-        <img src="" alt="">
-    </section>
-    <aside class="previous"></aside>
-    <div class="currently"></div>
+        <section class="oops">
+            <img src="./assets/images/questionMark.jpg" alt="a question mark">
+            <p>Uh..this is awkward, you sure that place exists?</p>
+        </section>
 
+        <aside class="previous"></aside>
+        <section class="currently">
+            <article class="tempDesc">
+                <img src="">
+                <p class="temperature"></p>
+                <p class="desc"></p>
+            </article>
+            <article class="humidity">
+                <i class="fa-solid fa-water"></i>
+                <div class="text">
+                    <span></span>
+                    <p>Humidity</p>
+                </div>
+            </article>
+            <article class="wind">
+                <i class="fa-solid fa-wind"></i>
+                <div class="text">
+                    <span></span>
+                    <p>Wind is this fast!</p>
+            </article>
+        </section>
+    </section>
 
     <script src="https://kit.fontawesome.com/7c8801c017.js" crossorigin="anonymous"></script>
     <script src="./assets/script.js"></script>
