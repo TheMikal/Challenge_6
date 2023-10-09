@@ -80,7 +80,7 @@ search.addEventListener('click', () => {
                 weatherBox.style.display = '';
                 weatherDetails.style.display = '';
                 weatherBox.classList.add('fadeIn');
-                container.style.height = '590px';
+                container.style.height = '700px';
     
             } else {
                 container.style.height = '590px';
