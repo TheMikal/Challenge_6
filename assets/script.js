@@ -12,7 +12,7 @@ search.addEventListener('click', () => {
     if (city === '')
         return;
     // fetch to turn the given zip code into coordinates
-    fetch(`http://api.openweathermap.org/geo/1.0/zip?zip=${city}&appid=${APIkey}`)
+    fetch(`https://api.openweathermap.org/geo/1.0/zip?zip=${city}&appid=${APIkey}`)
     .then(response => response.json())
     .then((data) => {
         const lat  = data.lat;
