@@ -19,7 +19,7 @@ search.addEventListener('click', () => {
         const lon = data.lon;
 
         // the fetch getting the weather based off user input
-        fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${APIkey}`)
+        fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${APIkey}&units=imperial`)
         .then(response => response.json())
         .then(json => {
 
