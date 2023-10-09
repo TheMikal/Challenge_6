@@ -16,7 +16,7 @@ body{
 
 .container{
     position: relative;
-    width: 400px;
+    width: 500px;
     height: 105px;
     background: #fff;
     padding: 28px 32px;
@@ -144,6 +144,7 @@ body{
     color: #06283D;
     font-size: 14px;
     font-weight: 500;
+    padding: 5px;
 }
 
 .oops{
@@ -164,11 +165,6 @@ body{
     font-size: 22px;
     font-weight: 500;
     margin-top: 12px;
-}
-
-.currently{
-    scale: 0;
-    opacity: 0;
 }
 
 .fadeIn{

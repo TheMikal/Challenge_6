@@ -7,7 +7,7 @@ const error404 = document.querySelector('.oops');
 search.addEventListener('click', () => {
     // storing api key to use in the fetch
     const APIkey = '11e4b4f812e7f93861e61012ba68dcc5';
-    const city = document.querySelector('.searchBox input').Value;
+    const city = document.querySelector('.searchBox input').value;
 
     if (city === '')
         return;
@@ -40,50 +40,57 @@ search.addEventListener('click', () => {
             const desc = document.querySelector('.desc');
             const mugCity = document.querySelector('.humidity span');
             const wind = document.querySelector('.wind span');
-            // switch case to change the image based on the weather
-            switch (json.weather[0].main) {
-                case 'Clear':
-                    image.src = 'images/sunny.png';
-                    break;
 
-                case 'Rain':
-                    image.src = 'images/rainy.png';
-                    break;
+            if (json.weather && json.weather.length > 0){
+                // switch case to change the image based on the weather
+                switch (json.weather[0].main) {
+                    case 'Clear':
+                        image.src = './assets/images/sunny.png';
+                        break;
 
-                case 'Drizzle':
-                    image.src = 'images/rainy.png';
-                    break;
+                    case 'Rain':
+                        image.src = './assets/images/rainy.png';
+                        break;
 
-                case 'Snow':
-                    image.src = 'images/snowy.png';
-                    break;
+                    case 'Drizzle':
+                        image.src = './assets/images/rainy.png';
+                        break;
 
-                case 'Clouds':
-                    image.src = 'images/cloudy.png';
-                    break;
+                    case 'Snow':
+                        image.src = './assets/images/snowy.png';
+                        break;
 
-                case 'Fog':
-                    image.src = 'images/foggy.png';
-                    break;
+                    case 'Clouds':
+                        image.src = './assets/images/cloudy.jpg';
+                        break;
 
-                default:
-                    image.src = '';
+                    case 'Fog':
+                        image.src = './assets/images/foggy.png';
+                        break;
+
+                    default:
+                        image.src = '';
+                }
+
+                temp.innerHTML = `${parseInt(json.main.temp)}<span>°F</span>`;
+                desc.innerHTML = `${json.weather[0].description}`;
+                mugCity.innerHTML =`${json.main.humidity}%`;
+                wind.innerHTML = `${parseInt(json.wind.speed)}Mph`;
+    
+                weatherBox.style.display = '';
+                weatherDetails.style.display = '';
+                weatherBox.classList.add('fadeIn');
+                container.style.height = '590px';
+    
+            } else {
+                container.style.height = '590px';
+                weatherBox.style.display = 'none';
+                weatherDetails.style.display = 'none';
+                error404.style.display = 'block';
+                error404.classList.add('fadeIn');
             }
-
-            temp.innerHTML = `${parseInt(json.main.temp)}<span>°F</span>`;
-            desc.innerHTML = `${json.weather[0].description}`;
-            mugCity.innerHTML =`${json.main.humidity}%`;
-            wind.innerHTML = `${parseInt(json.wind.speed)}Mph`;
-
-            weatherBox.style.display = '';
-            weatherDetails.style.display = '';
-            weatherBox.classList.add('fadeIn');
-            container.style.height = '590px';
-
+        }).catch((error) => {
+            console.error('Error getting data:', error);
         });
-
-
-    });
-
-
+    })
 });
