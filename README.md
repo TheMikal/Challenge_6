@@ -3,7 +3,7 @@
 In making this app i wanted to create a simple to use app that when you provide a zip code or country code it gives the current weather for that area.
 
 ## Uses/Examples
-Click the link below to learn more wbout your local weather!
+Click the link below to learn more about your local weather!
 
 - https://themikal.github.io/Coding_with_a_chance_of_weather/
 
